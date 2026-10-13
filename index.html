@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVA — Curated Essentials</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="#home" class="logo">NOVA<span>.</span></a>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#collection">Collections</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+            </div>
+
+            <button class="icon-btn" id="favoriteBtn" aria-label="Favorites">
+                ♡
+                <span class="count" id="favoriteCount">0</span>
+            </button>
+
+            <button class="icon-btn" id="cartBtn" aria-label="Cart">
+                🛒
+                <span class="count" id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">THE NOVA EDIT · 2026</p>
+
+                <h1>
+                    Things worth
+                    <em>keeping.</em>
+                </h1>
+
+                <p class="hero-text">
+                    A curated collection of everyday essentials,
+                    designed for people who appreciate good details.
+                </p>
+
+                <a href="#shop" class="primary-btn">
+                    Explore Collection →
+                </a>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="hero-label">
+                    <span>01</span>
+                    Curated<br>
+                    Essentials
+                </div>
+
+                <img
+                    src="assets/product1.jpg"
+                    alt="NOVA featured product"
+                    onerror="this.style.display='none'"
+                >
+
+                <div class="hero-circle">
+                    NOVA
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BRAND STRIP -->
+        <section class="brand-strip">
+
+            <span>MODERN</span>
+            <span>ESSENTIAL</span>
+            <span>TIMELESS</span>
+            <span>CURATED</span>
+            <span>EVERYDAY</span>
+
+        </section>
+
+
+        <!-- SHOP -->
+        <section class="shop-section" id="shop">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">SHOP THE EDIT</p>
+
+                    <h2>
+                        Made for
+                        <em>everyday.</em>
+                    </h2>
+                </div>
+
+                <p class="section-description">
+                    Carefully selected pieces that combine
+                    function, comfort and modern design.
+                </p>
+
+            </div>
+
+
+            <!-- FILTERS -->
+            <div class="shop-toolbar">
+
+                <div class="filters">
+
+                    <button class="filter active" data-category="all">
+                        All
+                    </button>
+
+                    <button class="filter" data-category="fashion">
+                        Fashion
+                    </button>
+
+                    <button class="filter" data-category="tech">
+                        Tech
+                    </button>
+
+                    <button class="filter" data-category="lifestyle">
+                        Lifestyle
+                    </button>
+
+                </div>
+
+                <span id="productResult">
+                    9 products
+                </span>
+
+            </div>
+
+
+            <!-- PRODUCTS -->
+            <div class="products-grid" id="productsGrid"></div>
+
+        </section>
+
+
+        <!-- COLLECTION -->
+        <section class="collection-section" id="collection">
+
+            <div class="collection-content">
+
+                <p class="eyebrow">NOVA COLLECTION 01</p>
+
+                <h2>
+                    Less noise.<br>
+                    <em>More character.</em>
+                </h2>
+
+                <p>
+                    Discover objects designed to fit naturally
+                    into your everyday life.
+                </p>
+
+                <a href="#shop" class="light-btn">
+                    Shop Collection →
+                </a>
+
+            </div>
+
+            <div class="collection-number">
+                01
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about-section" id="about">
+
+            <div class="about-number">
+                NOVA
+            </div>
+
+            <div class="about-content">
+
+                <p class="eyebrow">ABOUT NOVA</p>
+
+                <h2>
+                    Good design should
+                    feel <em>effortless.</em>
+                </h2>
+
+                <p>
+                    NOVA is a concept store built around simple,
+                    useful and beautifully designed products.
+                    No unnecessary noise — just things you'll
+                    actually want to keep.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- FAVORITES DRAWER -->
+    <aside class="side-drawer favorite-drawer" id="favoriteDrawer">
+
+        <div class="drawer-header">
+
+            <div>
+                <p class="eyebrow">YOUR COLLECTION</p>
+                <h3>Favorites</h3>
+            </div>
+
+            <button class="close-btn" id="closeFavorite">
+                ×
+            </button>
+
+        </div>
+
+        <div class="drawer-content" id="favoriteItems"></div>
+
+    </aside>
+
+
+    <!-- CART DRAWER -->
+    <aside class="side-drawer cart-drawer" id="cartDrawer">
+
+        <div class="drawer-header">
+
+            <div>
+                <p class="eyebrow">YOUR BAG</p>
+                <h3>Shopping Cart</h3>
+            </div>
+
+            <button class="close-btn" id="closeCart">
+                ×
+            </button>
+
+        </div>
+
+        <div class="drawer-content" id="cartItems"></div>
+
+        <div class="cart-footer">
+
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button class="checkout-btn" id="checkoutBtn">
+                Checkout →
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- PRODUCT MODAL -->
+    <div class="modal" id="productModal">
+
+        <div class="modal-box">
+
+            <button class="modal-close" id="modalClose">
+                ×
+            </button>
+
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="">
+            </div>
+
+            <div class="modal-info">
+
+                <p class="eyebrow" id="modalCategory"></p>
+
+                <h2 id="modalName"></h2>
+
+                <p class="modal-price" id="modalPrice"></p>
+
+                <p id="modalDescription"></p>
+
+                <button class="primary-btn modal-cart-btn" id="modalAddCart">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            NOVA<span>.</span>
+        </div>
+
+        <p>
+            Curated essentials for modern living.
+        </p>
+
+        <span>
+            © 2026 NOVA
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
